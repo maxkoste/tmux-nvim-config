@@ -1,0 +1,23 @@
+# Ignore plugin folders managed by TPM
+/tmux/plugins/
+
+# Ignore Neovim plugin binaries and temporary files
+nvim/.local/
+nvim/.cache/
+nvim/undo/
+nvim/backup/
+nvim/swap/
+nvim/site/pack/packer/
+nvim/lazy-lock.json
+
+# Ignore LSP and Mason installations
+nvim/mason/
+nvim/lazy/
+
+# Other runtime-generated files
+*/.DS_Store
+karabiner/
+raycast
+zed/
+github-copilot/
+gh/
