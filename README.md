@@ -12,7 +12,7 @@ This repository contains my personal configuration for **Neovim** and **Tmux**.
 
 ✅ Pre-configured for:
 
-- Java (with **Maven**, not Gradle)
+- Java (with **Maven** and **Gradle**)
 - C / C++
 - TypeScript
 - JavaScript
