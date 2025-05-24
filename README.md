@@ -21,7 +21,7 @@ This repository contains my personal configuration for **Neovim** and **Tmux**.
 
 ## Preview
 
-![Screenshot 2025-05-22 at 13 48 16](https://github.com/user-attachments/assets/9f629aa8-fccc-42fa-9efa-207f0400029a)
+<img width="1798" alt="Screenshot 2025-05-24 at 18 09 56" src="https://github.com/user-attachments/assets/67c8a1dd-1d1c-4503-a2ed-1e889e892f3b" />
 
 ## Setup
 
