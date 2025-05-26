@@ -21,6 +21,7 @@ This repository contains my personal configuration for **Neovim** and **Tmux**.
 
 ## TMUX / NVIM
 <img width="1798" alt="Screenshot 2025-05-24 at 18 09 56" src="https://github.com/user-attachments/assets/67c8a1dd-1d1c-4503-a2ed-1e889e892f3b" />
+
 ## SPICETIFY/SKETCHYBAR
 <img width="1800" alt="Screenshot 2025-05-26 at 22 20 50" src="https://github.com/user-attachments/assets/61a29add-9b98-4133-8d8c-8450e61ba14a" />
 
