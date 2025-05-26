@@ -1,6 +1,6 @@
 # 🛠️ Nvim and Tmux Config
 
-This repository contains my personal configuration for **Neovim** and **Tmux**.
+This repository contains my personal configuration for **Neovim** and **Tmux** aswell as my config for sketchybar and Spicetify.
 
 ## ✨ Features
 
