@@ -92,3 +92,96 @@ This repository contains my personal configuration for **Neovim** and **Tmux** a
    # Reset window status format
    set -g window-status-format ""
    set -g window-status-current-format ""
+
+   ```bash
+   -- Pull in the wezterm API
+   local wezterm = require("wezterm")
+
+   -- This will hold the configuration.
+   local config = wezterm.config_builder()
+
+   wezterm.on("gui-startup", function(cmd)
+   	local active = wezterm.gui.screens().active
+   	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+   	window:guiwindow():setposition(active.x, active.y)
+   	window:guiwindow():set_innersize(active.width, active.height)
+   end)
+   
+   config = {
+   	automatically_reload_config = true,
+   	enable_tab_bar = false,
+   	default_cursor_style = "BlinkingBar",
+   	window_close_confirmation = "NeverPrompt",
+   	adjust_window_size_when_changing_font_size = false,
+   	native_macos_fullscreen_mode = false,
+   
+   	window_padding = {
+   		left = 0,
+   		right = 0,
+   		top = 0,
+   		bottom = 0,
+   	},
+   }
+   -- config.color_scheme = "Tokyo Night Moon"
+   config.color_scheme = "Tokyo Night"
+   -- config.color_scheme = "Catppuccin Macchiato (Gogh)"
+   -- config.color_scheme = "Catppuccin Mocha"
+   -- config.color_scheme = "City Lights (Gogh)" --dark as fuuck
+   -- config.color_scheme = "Chester"
+   -- config.color_scheme = "Cobalt 2 (Gogh)"
+   -- config.color_scheme = "ChallengerDeep"
+   config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
+   config.font_size = 19.5
+   
+   config.window_background_opacity = 0.8
+   config.macos_window_background_blur = 89
+   config.window_decorations = "RESIZE"
+   
+   config.send_composed_key_when_left_alt_is_pressed = true
+   config.send_composed_key_when_right_alt_is_pressed = true
+   
+   config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 2000 }
+   
+   local action = wezterm.action
+   config.keys = {
+   	{
+   		key = "-",
+   		mods = "LEADER",
+   		action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
+   	},
+   
+   	{
+   		key = ".",
+   		mods = "LEADER",
+   		action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+   	},
+   	{
+   		key = "p",
+   		mods = "CMD|SHIFT",
+   		action = action.ActivateCommandPalette,
+   	},
+   
+   	-- Navigation between panes using leader + hjkl (like tmux)
+   	{
+   		key = "h",
+   		mods = "LEADER",
+   		action = action.ActivatePaneDirection("Left"),
+   	},
+   	{
+   		key = "j",
+   		mods = "LEADER",
+   		action = action.ActivatePaneDirection("Down"),
+   	},
+   	{
+   		key = "k",
+   		mods = "LEADER",
+   		action = action.ActivatePaneDirection("Up"),
+   	},
+   	{
+   		key = "l",
+   		mods = "LEADER",
+   		action = action.ActivatePaneDirection("Right"),
+   	},
+   }
+   
+   return config
