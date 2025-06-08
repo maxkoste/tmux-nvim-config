@@ -92,7 +92,7 @@ This repository contains my personal configuration for **Neovim** and **Tmux** a
    # Reset window status format
    set -g window-status-format ""
    set -g window-status-current-format ""
-
+## Wezterm config
    ```bash
    -- Pull in the wezterm API
    local wezterm = require("wezterm")
