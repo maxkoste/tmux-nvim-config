@@ -6,11 +6,11 @@ source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are configured
-COLOR_DIR = "$HOME/.config/sketchybar/colors.sh" 
+COLOR_DIR = "$HOME/.config/sketchybar/colors.sh"
 
 ##### Bar Appearance #####
 
-sketchybar --bar position=top height=36 blur_radius=100 color=$BACKGROUND_BAR corner_radius=20 margin=12 y_offset=6
+sketchybar --bar position=top height=32 blur_radius=100 color="$TRANSPARENT" corner_radius=40 margin=12 y_offset=6
 
 ##### Defaults #####
 
@@ -18,82 +18,104 @@ FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 PADDINGS=3
 
 default=(
-  padding_left=5
-  padding_right=5
-  icon.font="Hack Nerd Font:Bold:18.0"
-  label.font="SF Pro:Bold:15.0"
-  icon.color=0xffffffff
-  # icon.color=$GREEN
-  label.color=0xffffffff
-  icon.padding_left=4
-  icon.padding_right=4
-  label.padding_left=4
-  label.padding_right=4
+	padding_left=5
+	padding_right=5
+	icon.font="Hack Nerd Font:Bold:18.0"
+	label.font="SF Pro:Bold:15.0"
+	label.color=0xffffffff
+	icon.padding_left=4
+	icon.padding_right=4
+	label.padding_left=4
+	label.padding_right=4
 )
 sketchybar --default "${default[@]}"
 
-
-##### Adding Mission Control Space Indicators #####
-SPACE_ICONS=("$ICON_HOMEAUTOMATION" "$ICON_TERM" "$ICON_NOTE" "$ICON_CHAT $ICON_VOLUME_HEADPHONES" "$ICON_PHOTOSHOP" "6" "7" "8" "9" "10")
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid="$(($i+1))"
-  space=(
-    space="$sid"
-    icon="${SPACE_ICONS[i]}"
-    icon.padding_left=5
-    icon.padding_right=5
-    background.color=$ICON_BACKGROUND
-    background.corner_radius=5
-    background.height=25
-    label.drawing=off
-    script="$PLUGIN_DIR/space.sh"
-  )
-  sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+#### Adding Mission Control Space Indicators #####
+SPACE_ICONS=("$ICON_HOMEAUTOMATION" "$ICON_TERM" "$ICON_NOTE" "$ICON_CHAT" "$ICON_VOLUME_HEADPHONES" "$ICON_PHOTOSHOP" "7" "8" "9" "10")
+for i in "${!SPACE_ICONS[@]}"; do
+	sid="$(($i + 1))"
+	space=(
+		space="$sid"
+		icon="${SPACE_ICONS[i]}"
+		icon.padding_left=5
+		icon.padding_right=5
+		background.color=$ICON_BACKGROUND
+		background.corner_radius=5
+		background.height=25
+		label.drawing=off
+		script="$PLUGIN_DIR/space.sh"
+	)
+	sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
 done
 
 ##### Adding Left Items #####
-sketchybar --add item front_app left \
-           --set front_app       background.color=$TRANSPARENT \
-                                 icon.font="sketchybar-app-font:Regular:17.0" \
-                                 script="$PLUGIN_DIR/front_app.sh"            \
-           --subscribe front_app front_app_switched
+sketchybar --add item front_app left
+
+sketchybar --set front_app \
+	background.color=$TRANSPARENT \
+	icon.font="sketchybar-app-font:Regular:17.0" \
+	label.font="SF Pro:Bold:14.0" \
+	script="$PLUGIN_DIR/front_app.sh"
+
+sketchybar --subscribe front_app front_app_switched
+
+##### Add LEFT BRACKET transparent background #####
+sketchybar --add bracket left_items space.1 space.2 space.3 space.4 space.5 space.6 space.7 space.8 front_app
+
+sketchybar --set left_items \
+	background.color=$DARK_BAR_COLOR_60 \
+	background.corner_radius=50 \
+	background.height=36 \
+	background.padding_left=30 \
+	background.padding_right=30 \
+	background.margin=20
 
 ##### Adding Right Items #####
 #
 sketchybar --add item calendar right \
-           --set calendar icon=􀧞 \
-                         label="$(date +'%a %d %b %I:%M %p')" \
-						 update_freq=60 \
-                         script="$PLUGIN_DIR/clock.sh"
+	--set calendar icon="" \
+	label="$(date +'%a %d %b %Y %H:%M')" \
+	label.font="SF Pro:Regular:14.0" \
+	update_freq=50 \
+	script="$PLUGIN_DIR/clock.sh"
 
 # Volume
 sketchybar --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-                         icon=􀊩 \
-           --subscribe volume volume_change
+	--set volume script="$PLUGIN_DIR/volume.sh" \
+	icon=􀊩 \
+	label.font="SF Pro:Regular:14.0" \
+	--subscribe volume volume_change
 
 # Battery
-sketchybar --add item battery right \
-           --set battery update_freq=120 \
-                          script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
+sketchybar --add item battery right
 
-sketchybar --add item battery right \
-	--set battery update_freq=120 \
+sketchybar --set battery \
+	update_freq=120 \
 	script="$PLUGIN_DIR/battery.sh" \
-	--subscribe battery system_woke power_source_change
+	label.font="SF Pro:Regular:14.0"
 
+sketchybar --subscribe battery system_woke power_source_change
+
+#Spotify currently playing label
 sketchybar --add item spotify right
 sketchybar --set spotify \
-  script="$HOME/.config/sketchybar/items/spotify.sh" \
-  icon= \
-  icon.font="Hack Nerd Font:Bold:18.0" \
-  label.font="SF Pro:Bold:15.0" \
-  update_freq=4 \
-  background.padding_right=2 \
-  # icon.color=$GREEN \
-  click_script="open -a Spotify" \
+	script="$HOME/.config/sketchybar/items/spotify.sh" \
+	icon= \
+	icon.font="Hack Nerd Font:Bold:18.0" \
+	icon.color=$GREEN \
+	label.font="SF Pro:Regular:14.0" \
+	update_freq=4 \
+	background.padding_right=2 \
+	click_script="open -a Spotify"
+
+sketchybar --add bracket right_items spotify volume battery calendar
+
+sketchybar --set right_items \
+	background.color=$DARK_BAR_COLOR_60 \
+	background.corner_radius=50 \
+	background.height=36 \
+	background.padding_left=30 \
+	background.padding_right=30 \ 
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

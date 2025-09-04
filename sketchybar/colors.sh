@@ -23,6 +23,9 @@ export MAGENTA=0xffc6a0f6
 export GREY=0xff939ab7
 export TRANSPARENT=0x00000000
 export ICON_BACKGROUND=0x40ffffff
+export DARK_BAR_COLOR=0xff1e2030
+export DARK_BAR_COLOR_60=0x991e2030
+export ROSE=0x00f38ba8
 
 # General bar colors
 export ICON_COLOR=$WHITE  # Color of all icons

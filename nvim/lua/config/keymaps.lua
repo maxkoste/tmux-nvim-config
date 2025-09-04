@@ -11,3 +11,8 @@ map("n", "<leader>-", "<cmd>split<CR>", opts)
 -- Center after scroll
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
+--
+-- -- Lazygit in a floating terminal
+-- map("n", "<leader>gg", function()
+--   require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" }):toggle()
+-- end, opts)
