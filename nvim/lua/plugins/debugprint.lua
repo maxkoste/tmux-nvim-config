@@ -36,7 +36,7 @@ return {
     }, -- opts = { … },
   },
   dependencies = {
-    "echasnovski/mini.nvim", -- Optional: Needed for line highlighting (full mini.nvim plugin)
+    "nvim-mini/mini.nvim", -- Optional: Needed for line highlighting (full mini.nvim plugin)
     -- ... or ...
     -- "echasnovski/mini.hipatterns",   -- Optional: Needed for line highlighting ('fine-grained' hipatterns plugin)
 

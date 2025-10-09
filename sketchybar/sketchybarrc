@@ -10,7 +10,7 @@ COLOR_DIR = "$HOME/.config/sketchybar/colors.sh"
 
 ##### Bar Appearance #####
 
-sketchybar --bar position=top height=32 blur_radius=100 color="$TRANSPARENT" corner_radius=40 margin=12 y_offset=6
+sketchybar --bar position=top height=40 blur_radius=100 color=$TRANSPARENT corner_radius=0 margin=0 y_offset=0
 
 ##### Defaults #####
 
@@ -20,8 +20,8 @@ PADDINGS=3
 default=(
 	padding_left=5
 	padding_right=5
-	icon.font="Hack Nerd Font:Bold:18.0"
-	label.font="SF Pro:Bold:15.0"
+	icon.font="Hack Nerd Font:Regular:18.0"
+	label.font="SF Pro:Regular:15.0"
 	label.color=0xffffffff
 	icon.padding_left=4
 	icon.padding_right=4
@@ -60,7 +60,7 @@ sketchybar --set front_app \
 sketchybar --subscribe front_app front_app_switched
 
 ##### Add LEFT BRACKET transparent background #####
-sketchybar --add bracket left_items space.1 space.2 space.3 space.4 space.5 space.6 space.7 space.8 front_app
+# sketchybar --add bracket left_items space.1 space.2 space.3 space.4 space.5 space.6 space.7 space.8 front_app
 
 sketchybar --set left_items \
 	background.color=$DARK_BAR_COLOR_60 \
@@ -74,17 +74,17 @@ sketchybar --set left_items \
 #
 sketchybar --add item calendar right \
 	--set calendar icon="" \
-	label="$(date +'%a %d %b %Y %H:%M')" \
 	label.font="SF Pro:Regular:14.0" \
 	update_freq=50 \
+	click_script="open -a Calendar" \
 	script="$PLUGIN_DIR/clock.sh"
 
 # Volume
-sketchybar --add item volume right \
-	--set volume script="$PLUGIN_DIR/volume.sh" \
-	icon=􀊩 \
-	label.font="SF Pro:Regular:14.0" \
-	--subscribe volume volume_change
+# sketchybar --add item volume right \
+# 	--set volume script="$PLUGIN_DIR/volume.sh" \
+# 	icon=􀊩 \
+# 	label.font="SF Pro:Regular:14.0" \
+# 	--subscribe volume volume_change
 
 # Battery
 sketchybar --add item battery right
@@ -108,7 +108,7 @@ sketchybar --set spotify \
 	background.padding_right=2 \
 	click_script="open -a Spotify"
 
-sketchybar --add bracket right_items spotify volume battery calendar
+# sketchybar --add bracket right_items spotify volume battery calendar
 
 sketchybar --set right_items \
 	background.color=$DARK_BAR_COLOR_60 \

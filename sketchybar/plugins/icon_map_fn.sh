@@ -12,13 +12,13 @@ function icon_map() {
 		icon_result=":figma:"
 		;;
 	"ChatGPT")
-		icon_result="🧠"
+		icon_result=$ICON_CHAT
 		;;
 	"VMware Fusion")
 		icon_result=":vmware_fusion:"
 		;;
 	"Alacritty" | "Hyper" | "iTerm2" | "kitty" | "Terminal" | "终端" | "WezTerm")
-		icon_result="$ICON_REMOTEDESKTOP"
+		icon_result="$ICON_NOTE"
 		;;
 	"Microsoft To Do" | "Things")
 		icon_result=":things:"
@@ -168,7 +168,10 @@ function icon_map() {
 		icon_result=":git_hub:"
 		;;
 	"Firefox")
-		icon_result=":firefox:"
+		icon_result=$ICON_FIREFOX
+		;;
+	"Zen")
+		icon_result=$ICON_FIREFOX
 		;;
 	"Slack")
 		icon_result=":slack:"
@@ -177,7 +180,7 @@ function icon_map() {
 		icon_result=":spotify:"
 		;;
 	"Neovide" | "MacVim" | "Vim" | "VimR" | "WezTerm")
-		icon_result=":vim:"
+		icon_result=$ICON_TERM
 		;;
 	"KeePassXC")
 		icon_result=":kee_pass_x_c:"
