@@ -1,4 +1,13 @@
 return {
+  { "shaunsingh/nord.nvim" },
+  {
+    "EdenEast/nightfox.nvim",
+    opts = {
+      overrides = {
+        transparent = true,
+      },
+    },
+  },
   {
     "ellisonleao/gruvbox.nvim",
     opts = {
@@ -7,6 +16,7 @@ return {
       },
     },
   },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   {
     "LazyVim/LazyVim",
