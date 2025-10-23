@@ -20,7 +20,7 @@ This repository contains my personal configuration for **Neovim** and **Tmux** a
 - Go
 
 ## TMUX / NVIM
-<img width="1798" alt="Screenshot 2025-05-24 at 18 09 56" src="https://github.com/user-attachments/assets/67c8a1dd-1d1c-4503-a2ed-1e889e892f3b" />
+<img width="1800" height="1169" alt="Screenshot 2025-10-23 at 19 30 10" src="https://github.com/user-attachments/assets/045751e8-45df-4ee2-a303-c7ba052fd1b9" />
 
 ## SPICETIFY/SKETCHYBAR
-<img width="1800" alt="Screenshot 2025-05-26 at 22 35 52" src="https://github.com/user-attachments/assets/58e23f6d-6c5d-4c60-90fe-d9b2d2fa8061" />
+<img width="1800" height="1169" alt="Screenshot 2025-10-23 at 19 31 47" src="https://github.com/user-attachments/assets/6f4714ee-f516-45c4-96e9-8b59d5aacfb0" />
