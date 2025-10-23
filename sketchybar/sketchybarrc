@@ -7,8 +7,6 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are configured
 COLOR_DIR = "$HOME/.config/sketchybar/colors.sh"
 
-"$PLUGIN_DIR/aerospace-listener.sh" &
-
 ##### Bar Appearance #####
 
 sketchybar --bar position=top height=40 blur_radius=100 color=$TRANSPARENT corner_radius=0 margin=0 y_offset=0
