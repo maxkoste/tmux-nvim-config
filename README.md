@@ -4,9 +4,9 @@ This repository contains my personal configuration for **Neovim** and **Tmux** a
 
 ## ✨ Features
 
-- 🪟 **Transparent Neovim UI** — integrates cleanly with your terminal or Tmux theme
-- 🧵 Tmux setup with battery, online-status, and Catppuccin theme
-- 🔌 Plugin-managed with TPM and LazyVim
+- **Transparent Neovim UI** — integrates cleanly with your terminal theme
+- Tmux setup with battery, online-status and transparency to adopt your terminal theme
+- Plugin-managed with TPM(tmux) and LazyVim
 
 ## Language Support
 
@@ -14,10 +14,10 @@ This repository contains my personal configuration for **Neovim** and **Tmux** a
 
 - Java (with **Maven** and **Gradle**)
 - C / C++
+- Go
 - TypeScript
 - JavaScript
 - Python
-- Go
 
 ## TMUX / NVIM
 <img width="1800" height="1169" alt="Screenshot 2025-10-23 at 19 30 10" src="https://github.com/user-attachments/assets/045751e8-45df-4ee2-a303-c7ba052fd1b9" />
