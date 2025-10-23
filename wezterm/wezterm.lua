@@ -30,7 +30,7 @@ config = {
 	font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
 	font_size = 16,
 
-	window_background_opacity = 1,
+	window_background_opacity = 0.9,
 	macos_window_background_blur = 100,
 	window_decorations = "RESIZE",
 
