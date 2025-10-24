@@ -20,7 +20,9 @@ This repository contains my personal configuration for **Neovim** and **Tmux** a
 - Python
 
 ## TMUX / NVIM
-<img width="1800" height="1169" alt="Screenshot 2025-10-23 at 19 30 10" src="https://github.com/user-attachments/assets/045751e8-45df-4ee2-a303-c7ba052fd1b9" />
+<img width="1800" height="1169" alt="Screenshot 2025-10-24 at 19 03 29" src="https://github.com/user-attachments/assets/d8b57981-33d5-418f-8e31-4e7b10832f61" />
 
 ## SPICETIFY/SKETCHYBAR
-<img width="1800" height="1169" alt="Screenshot 2025-10-23 at 19 31 47" src="https://github.com/user-attachments/assets/6f4714ee-f516-45c4-96e9-8b59d5aacfb0" />
+
+<img width="1800" height="1169" alt="Screenshot 2025-10-24 at 19 02 39" src="https://github.com/user-attachments/assets/dc91ac68-baae-4085-8795-35c92a568c06" />
+<img width="1800" height="1169" alt="Screenshot 2025-10-24 at 19 02 09" src="https://github.com/user-attachments/assets/a72d3fec-0a5f-45eb-9ef9-21a7393e0024" />
