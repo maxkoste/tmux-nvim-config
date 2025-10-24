@@ -9,7 +9,7 @@ COLOR_DIR = "$HOME/.config/sketchybar/colors.sh"
 
 ##### Bar Appearance #####
 
-sketchybar --bar position=top height=40 blur_radius=100 color=$TRANSPARENT corner_radius=0 margin=0 y_offset=0
+sketchybar --bar position=top height=40 blur_radius=50 color=$TRANSPARENT corner_radius=0 margin=0 y_offset=0
 
 ##### Defaults #####
 
@@ -41,7 +41,7 @@ for sid in $(aerospace list-workspaces --all); do
 		--subscribe space.$sid aerospace_workspace_change \
 		--set space.$sid \
 		background.height=20 \
-		background.drawing=off \
+		icon.padding_left=1 icon.padding_right=1 background.drawing=off \
 		click_script="aerospace workspace $sid" \
 		script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
@@ -95,13 +95,6 @@ sketchybar --add item calendar right \
 	update_freq=50 \
 	click_script="open -a Calendar" \
 	script="$PLUGIN_DIR/clock.sh"
-
-# Volume
-# sketchybar --add item volume right \
-# 	--set volume script="$PLUGIN_DIR/volume.sh" \
-# 	icon=􀊩 \
-# 	label.font="SF Pro:Regular:14.0" \
-# 	--subscribe volume volume_change
 
 # Battery
 sketchybar --add item battery right
