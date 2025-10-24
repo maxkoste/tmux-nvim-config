@@ -1,12 +1,17 @@
 return {
-  { "shaunsingh/nord.nvim" },
+  -- { "shaunsingh/nord.nvim" },
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   opts = {
+  --     overrides = {
+  --       transparent = true,
+  --     },
+  --   },
+  -- },
   {
-    "EdenEast/nightfox.nvim",
-    opts = {
-      overrides = {
-        transparent = true,
-      },
-    },
+    "neanias/everforest-nvim",
+    lazy = false,
+    priority = 1000,
   },
   {
     "ellisonleao/gruvbox.nvim",
@@ -17,11 +22,11 @@ return {
     },
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-
+  --
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "everforest",
     },
   },
 }
