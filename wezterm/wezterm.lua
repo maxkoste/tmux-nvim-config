@@ -4,13 +4,6 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-wezterm.on("gui-startup", function(cmd)
-	local active = wezterm.gui.screens().active
-	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
-	window:guiwindow():setposition(active.x, active.y)
-	window:guiwindow():set_innersize(active.width, active.height)
-end)
-
 config = {
 	automatically_reload_config = true,
 	enable_tab_bar = false,
