@@ -5,11 +5,11 @@ source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are configured
-COLOR_DIR = "$HOME/.config/sketchybar/colors.sh"
+COLOR_DIR="$HOME/.config/sketchybar/colors.sh"
 
 ##### Bar Appearance #####
 
-sketchybar --bar position=top height=40 blur_radius=50 color=$TRANSPARENT corner_radius=0 margin=0 y_offset=0
+sketchybar --bar position=top height=40 blur_radius=50 color="$TRANSPARENT" corner_radius=0 margin=0 y_offset=0
 
 ##### Defaults #####
 
@@ -29,17 +29,15 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
-AERO="/opt/homebrew/bin/aerospace"
-
 # Example icon mapping (adjust to your needs)
 SPACE_ICONS=("$ICON_HOMEAUTOMATION" "$ICON_TERM" "$ICON_NOTE" "$ICON_CHAT" "$ICON_VOLUME_HEADPHONES" "$ICON_PHOTOSHOP" "7" "8" "9" "10")
 
 sketchybar --add event aerospace_workspace_change
 
 for sid in $(aerospace list-workspaces --all); do
-	sketchybar --add item space.$sid left \
-		--subscribe space.$sid aerospace_workspace_change \
-		--set space.$sid \
+	sketchybar --add item space."$sid" left \
+		--subscribe space."$sid" aerospace_workspace_change \
+		--set space."$sid" \
 		background.height=20 \
 		icon.padding_left=1 icon.padding_right=1 background.drawing=off \
 		click_script="aerospace workspace $sid" \
@@ -69,7 +67,7 @@ done
 sketchybar --add item front_app left
 
 sketchybar --set front_app \
-	background.color=$TRANSPARENT \
+	background.color="$TRANSPARENT" \
 	icon.font="sketchybar-app-font:Regular:17.0" \
 	label.font="SF Pro:Bold:14.0" \
 	script="$PLUGIN_DIR/front_app.sh"
@@ -80,7 +78,7 @@ sketchybar --subscribe front_app front_app_switched
 # sketchybar --add bracket left_items space.1 space.2 space.3 space.4 space.5 space.6 space.7 space.8 front_app
 
 sketchybar --set left_items \
-	background.color=$DARK_BAR_COLOR_60 \
+	background.color="$DARK_BAR_COLOR_60" \
 	background.corner_radius=50 \
 	background.height=36 \
 	background.padding_left=30 \
@@ -112,7 +110,7 @@ sketchybar --set spotify \
 	script="$HOME/.config/sketchybar/items/spotify.sh" \
 	icon= \
 	icon.font="Hack Nerd Font:Bold:18.0" \
-	icon.color=$GREEN \
+	icon.color="$GREEN" \
 	label.font="SF Pro:Regular:14.0" \
 	update_freq=4 \
 	background.padding_right=2 \
@@ -121,11 +119,11 @@ sketchybar --set spotify \
 # sketchybar --add bracket right_items spotify volume battery calendar
 
 sketchybar --set right_items \
-	background.color=$DARK_BAR_COLOR_60 \
+	background.color="$DARK_BAR_COLOR_60" \
 	background.corner_radius=50 \
 	background.height=36 \
 	background.padding_left=30 \
-	background.padding_right=30 \ 
+	background.padding_right=30
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
