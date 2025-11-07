@@ -46,12 +46,12 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 7
-inner.vertical = 7
-outer.left = 7
-outer.bottom = 5
-outer.top = 7
-outer.right = 8
+inner.horizontal = [{ monitor.built-in = 7 }, 8]
+inner.vertical = [{ monitor.built-in = 7 }, 8]
+outer.left = [{ monitor.built-in = 7 }, 10]
+outer.bottom = [{ monitor.built-in = 5 }, 10]
+outer.top = [{ monitor.built-in = 5 }, 40]
+outer.right = [{ monitor.built-in = 7 }, 10]
 
 [mode.main.binding]
 
@@ -121,3 +121,7 @@ run = "move-node-to-workspace 5 --focus-follows-window"
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = "move-node-to-workspace 2 --focus-follows-window"
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = "move-node-to-workspace 4 --focus-follows-window"
