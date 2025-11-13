@@ -18,7 +18,7 @@ config = {
 		top = 0,
 		bottom = 0,
 	},
-	color_scheme = "Gruvbox Dark (Gogh)",
+	color_scheme = "Edge Dark (base16)",
 
 	font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
 	font_size = 16,

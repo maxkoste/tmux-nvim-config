@@ -22,7 +22,7 @@ fi
 FOCUSED_ICON=""
 DEFAULT_ICON=""
 
-source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/sketchybar/colors.sh"
 
 if [ "$SELECTED" = true ]; then
 	sketchybar --set "$NAME" icon.font.size=16 background.drawing=on \
