@@ -8,6 +8,14 @@ local opts = { noremap = true, silent = true }
 map("n", "<leader>.", "<cmd>vsplit<CR>", opts)
 map("n", "<leader>-", "<cmd>split<CR>", opts)
 
+-- custom increment since C-a is used by tmux in my config
+map("n", "g+", "<C-a>", opts)
+map("n", "g-", "<C-x>", opts)
+
+-- Visual mode increment/decrement
+map("x", "g+", "g<C-a>", opts)
+map("x", "g-", "g<C-x>", opts)
+
 -- Center after scroll
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
