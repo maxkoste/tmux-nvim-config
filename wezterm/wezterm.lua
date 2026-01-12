@@ -46,8 +46,8 @@ config = {
 		},
 	},
 
-	-- color_scheme = "Edge Dark (base16)",
-	color_scheme = "Catppuccin Mocha",
+	color_scheme = "gruvbox_material_dark_hard",
+	-- color_scheme = "Catppuccin Mocha",
 
 	font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
 	font_size = 16,
