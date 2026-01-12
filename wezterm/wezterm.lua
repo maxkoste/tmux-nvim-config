@@ -47,13 +47,13 @@ config = {
 	},
 
 	-- color_scheme = "Edge Dark (base16)",
-	color_scheme = "gruvbox_material_dark_hard",
+	color_scheme = "Catppuccin Mocha",
 
 	font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
 	font_size = 16,
 
 	window_background_opacity = 1,
-	macos_window_background_blur = 0,
+	-- macos_window_background_blur = 60,
 	-- window_decorations = "RESIZE",
 	window_decorations = "RESIZE",
 	send_composed_key_when_left_alt_is_pressed = true,
