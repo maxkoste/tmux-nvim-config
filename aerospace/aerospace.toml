@@ -1,8 +1,8 @@
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-	'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0x00FF0000 width=3.0',
-]
+# after-startup-command = [
+# 	'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0x00FF0000 width=3.0',
+# ]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -48,12 +48,12 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = [{ monitor.built-in = 8 }, 7]
-inner.vertical = [{ monitor.built-in = 8 }, 7]
-outer.left = [{ monitor.built-in = 7 }, 7]
-outer.bottom = [{ monitor.built-in = 5 }, 7]
-outer.top = [{ monitor.built-in = 5 }, 35]
-outer.right = [{ monitor.built-in = 7 }, 7]
+inner.horizontal = [{ monitor.built-in = 4 }, 7]
+inner.vertical = [{ monitor.built-in = 4 }, 7]
+outer.left = [{ monitor.built-in = 0 }, 7]
+outer.bottom = [{ monitor.built-in = 0 }, 7]
+outer.top = [{ monitor.built-in = 0 }, 32]
+outer.right = [{ monitor.built-in = 0 }, 7]
 
 [mode.main.binding]
 

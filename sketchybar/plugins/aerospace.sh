@@ -25,12 +25,12 @@ DEFAULT_ICON=""
 source "$CONFIG_DIR/sketchybar/colors.sh"
 
 if [ "$SELECTED" = true ]; then
-	sketchybar --set "$NAME" icon.font.size=16 background.drawing=on \
+	sketchybar --set "$NAME" icon.font.size=14 background.drawing=on \
 		background.color="$TRANSPARENT" \
 		label.color="$BAR_COLOR" \
 		icon="$FOCUSED_ICON"
 else
-	sketchybar --set "$NAME" icon.font.size=16 \
+	sketchybar --set "$NAME" icon.font.size=14 \
 		background.drawing=off \
 		label.color="$BLUE" \
 		icon="$DEFAULT_ICON"

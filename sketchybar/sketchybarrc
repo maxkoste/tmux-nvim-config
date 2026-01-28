@@ -38,7 +38,7 @@ sketchybar --add item front_app left
 sketchybar --set front_app \
 	background.color="$TRANSPARENT" \
 	icon.font="sketchybar-app-font:Regular:17.0" \
-	label.font="SF Pro:Bold:14.0" \
+	label.font="SF Pro:Regular:14.0" \
 	script="$PLUGIN_DIR/front_app.sh"
 
 sketchybar --subscribe front_app front_app_switched

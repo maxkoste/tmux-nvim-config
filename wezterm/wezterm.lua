@@ -46,15 +46,14 @@ config = {
 		},
 	},
 
-	color_scheme = "gruvbox_material_dark_hard",
-	-- color_scheme = "Catppuccin Mocha",
+	color_scheme = "Guezwhoz",
+	-- color_scheme = "Gruvbox dark, hard (base16)",
 
-	font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
+	-- font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
 	font_size = 16,
 
-	window_background_opacity = 1,
+	-- window_background_opacity = 0.95,
 	-- macos_window_background_blur = 60,
-	-- window_decorations = "RESIZE",
 	window_decorations = "RESIZE",
 	send_composed_key_when_left_alt_is_pressed = true,
 	send_composed_key_when_right_alt_is_pressed = true,
