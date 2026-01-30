@@ -46,7 +46,8 @@ config = {
 		},
 	},
 
-	color_scheme = "Guezwhoz",
+	-- color_scheme = "Guezwhoz",
+	color_scheme = "Dawn (terminal.sexy)",
 	-- color_scheme = "Gruvbox dark, hard (base16)",
 
 	-- font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
