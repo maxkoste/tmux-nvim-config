@@ -22,6 +22,8 @@ zed/
 github-copilot/
 gh/
 
+/mac-cleanup-go
+
 /fish
 /configstore
 /uv
