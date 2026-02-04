@@ -8,8 +8,8 @@ sketchybar --bar position=top height=40 blur_radius=50 color="$TRANSPARENT" corn
 ##### Defaults #####
 
 default=(
-	padding_left=5
-	padding_right=5
+	padding_left=0
+	padding_right=0
 	icon.font="Hack Nerd Font:Regular:18.0"
 	label.font="SF Pro:Regular:15.0"
 	label.color=0xffffffff
@@ -22,26 +22,42 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add event aerospace_workspace_change
 
+# for sid in $(aerospace list-workspaces --all); do
+# 	sketchybar --add item space."$sid" left \
+# 		--subscribe space."$sid" aerospace_workspace_change \
+# 		--set space."$sid" \
+# 		background.height=20 \
+# 		icon.padding_left=1 icon.padding_right=1 background.drawing=off \
+# 		click_script="aerospace workspace $sid" \
+# 		script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+# done
+
 for sid in $(aerospace list-workspaces --all); do
-	sketchybar --add item space."$sid" left \
-		--subscribe space."$sid" aerospace_workspace_change \
-		--set space."$sid" \
-		background.height=20 \
-		icon.padding_left=1 icon.padding_right=1 background.drawing=off \
-		click_script="aerospace workspace $sid" \
-		script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+    sketchybar --add item space."$sid" left \
+        --subscribe space."$sid" aerospace_workspace_change \
+        --set space."$sid" \
+        background.color=0x28ffffff \
+        background.corner_radius=7 \
+        background.height=22 \
+        background.width=1 \
+        background.drawing=on \
+		label.padding_right=13\
+		label.padding_left=1\
+        label="$sid" \
+        click_script="aerospace workspace $sid" \
+        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
 done
 
 ##### Adding Left Items #####
-sketchybar --add item front_app left
-
-sketchybar --set front_app \
-	background.color="$TRANSPARENT" \
-	icon.font="sketchybar-app-font:Regular:17.0" \
-	label.font="SF Pro:Regular:14.0" \
-	script="$PLUGIN_DIR/front_app.sh"
-
-sketchybar --subscribe front_app front_app_switched
+# sketchybar --add item front_app left
+#
+# sketchybar --set front_app \
+# 	background.color="$TRANSPARENT" \
+# 	icon.font="sketchybar-app-font:Regular:17.0" \
+# 	label.font="SF Pro:Regular:14.0" \
+# 	script="$PLUGIN_DIR/front_app.sh"
+#
+# sketchybar --subscribe front_app front_app_switched
 
 ##### Add LEFT BRACKET transparent background #####
 # sketchybar --add bracket left_items space.1 space.2 space.3 space.4 space.5 space.6 space.7 space.8 front_app
@@ -73,19 +89,18 @@ sketchybar --set battery \
 
 sketchybar --subscribe battery system_woke power_source_change
 
-#Spotify currently playing label
-sketchybar --add item spotify right
-sketchybar --set spotify \
-	script="$HOME/.config/sketchybar/items/spotify.sh" \
+Spotify currently playing label
+ sketchybar --add item spotify right
+ sketchybar --set spotify \
+ 	script="$HOME/.config/sketchybar/items/spotify.sh" \
+ 	icon.font="Hack Nerd Font:Bold:18.0" \
 	icon= \
-	icon.font="Hack Nerd Font:Bold:18.0" \
-	icon.color="$GREEN" \
-	label.font="SF Pro:Regular:14.0" \
-	update_freq=4 \
-	background.padding_right=2 \
-	click_script="open -a Spotify"
+ 	icon.color="$GREEN" \
+ 	label.font="SF Pro:Regular:14.0" \
+ 	update_freq=4 \
+ 	background.padding_right=2
 
-# sketchybar --add bracket right_items spotify volume battery calendar
+ sketchybar --add bracket right_items spotify volume battery calendar
 
 sketchybar --set right_items \
 	background.color="$DARK_BAR_COLOR_60" \

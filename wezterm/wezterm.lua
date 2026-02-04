@@ -52,8 +52,9 @@ config = {
 
 	-- font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
 	font_size = 16,
+	line_height = 1.1;
 
-	-- window_background_opacity = 0.95,
+	-- window_background_opacity = 0.9,
 	-- macos_window_background_blur = 60,
 	window_decorations = "RESIZE",
 	send_composed_key_when_left_alt_is_pressed = true,

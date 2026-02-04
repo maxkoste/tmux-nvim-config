@@ -52,7 +52,7 @@ inner.horizontal = [{ monitor.built-in = 4 }, 7]
 inner.vertical = [{ monitor.built-in = 4 }, 7]
 outer.left = [{ monitor.built-in = 0 }, 7]
 outer.bottom = [{ monitor.built-in = 0 }, 7]
-outer.top = [{ monitor.built-in = 0 }, 32]
+outer.top = [{ monitor.built-in = 0 }, 38]
 outer.right = [{ monitor.built-in = 0 }, 7]
 
 [mode.main.binding]
@@ -97,6 +97,15 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 alt-shift-comma = 'mode service'
 
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+
+4 = ['secondary', 'main'] #second monitor
+5 = ['secondary', 'main']
+6 = ['secondary', 'main']
+
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main']                # reset layout
@@ -111,7 +120,23 @@ if.app-id = 'app.zen-browser.zen'
 run = "move-node-to-workspace 1 --focus-follows-window"
 
 [[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = "move-node-to-workspace 2 --focus-follows-window"
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = "move-node-to-workspace 2 --focus-follows-window"
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = "move-node-to-workspace 2 --focus-follows-window"
+
+[[on-window-detected]]
 if.app-id = 'com.openai.chat'
+run = "move-node-to-workspace 3 --focus-follows-window"
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
 run = "move-node-to-workspace 3 --focus-follows-window"
 
 [[on-window-detected]]
@@ -121,14 +146,6 @@ run = "move-node-to-workspace 4 --focus-follows-window"
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = "move-node-to-workspace 5 --focus-follows-window"
-
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = "move-node-to-workspace 2 --focus-follows-window"
-
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = "move-node-to-workspace 3 --focus-follows-window"
 
 [[on-window-detected]]
 if.app-id = 'com.valvesoftware.steam.helper'

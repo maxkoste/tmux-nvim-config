@@ -1,6 +1,12 @@
 return {
-  --Disable tabs
+	--Disable tabs
 	{ "akinsho/bufferline.nvim", enabled = false },
 	-- disable pop up
-	{ "folke/noice.nvim", enabled = false },
+	{
+		"neovim/nvim-lspconfig",
+		opts = function(_, opts)
+			opts.servers = opts.servers or {}
+			opts.servers.copilot = false
+		end,
+	},
 }
